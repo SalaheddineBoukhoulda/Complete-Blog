@@ -3,13 +3,13 @@
 @section('content')
 
 
-    <div class="panel panel-default">
-        <div class="panel-heading">
+    <div class="card">
+        <div class="card-header">
             Create a new post
         </div>
 
-        <div class="panel-body">
-            <form action="/post/store" method="post">
+        <div class="card-body">
+        <form action="{{route('post.store')}}" method="post">
                 {{csrf_field()}}
                 <div class="form-group">
                     <label for="title">Title</label>
@@ -23,7 +23,7 @@
 
                 <div class="form-group">
                         <label for="content">Content</label>
-                        <textarea name="content" id="content" cols="100" rows="10"></textarea>
+                        <textarea name="content" id="content" rows="10" cols="90"></textarea>
                 </div>
 
                 <div class="form-group">

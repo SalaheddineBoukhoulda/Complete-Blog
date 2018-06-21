@@ -73,17 +73,21 @@
 
         <main class="py-4">
             <div class="container">
+
                 <div class="row">
+                    @if(Auth::check())
                     <div class="col-lg-4">
                         <ul class="list-goup">
                             <li class="list-group-item">
                                 <a href="/home">Home</a>
                             </li>
                             <li class="list-group-item">
-                                <a href="/post/create">Create a new post</a>
+                            <a href="{{ route('post.create')}}">Create a new post</a>
                             </li>
                         </ul>
                     </div>
+                    @endif
+
                     <div class="col-lg-8">
                         @yield('content')
                     </div>
