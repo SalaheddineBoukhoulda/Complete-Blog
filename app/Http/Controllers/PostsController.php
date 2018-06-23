@@ -6,8 +6,13 @@ use Illuminate\Http\Request;
 
 use App\Category;
 
+use App\Post;
+
+use Session;
+
 class PostsController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -42,6 +47,18 @@ class PostsController extends Controller
             'content' => 'required',
             'category_id' => 'required'
         ]);
+
+        $featured = $request->featured;
+        $featured_image_identical_name = time().$featured->getClientOriginalName();
+        $featured->move('uploads/posts',$featured_image_identical_name);
+
+        $post = Post::create([
+            'title' => $request->title,
+            'featured' => 'uploads/posts/' . $featured_image_identical_name,
+            'content' => $request->content,
+            'category_id' => $request->category_id
+        ]);
+
         dd($request->all());
     }
 

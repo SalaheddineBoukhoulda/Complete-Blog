@@ -93,11 +93,14 @@
                             </li>
                         </ul>
                     </div>
-                    @endif
-
                     <div class="col-lg-8">
                         @yield('content')
                     </div>
+                    @else
+                    <div class="col-sm">
+                        @yield('content')
+                    </div>
+                    @endif
                 </div>
             </div>
         </main>
