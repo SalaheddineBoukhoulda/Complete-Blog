@@ -61,10 +61,11 @@ class PostsController extends Controller
             'title' => $request->title,
             'featured' => 'uploads/posts/' . $featured_image_identical_name,
             'content' => $request->content,
-            'category_id' => $request->category_id
+            'category_id' => $request->category_id,
+            'slug' => str_slug($request->title)
         ]);
 
-        dd($request->all());
+        return redirect()->back();
     }
 
     /**
