@@ -35,9 +35,9 @@
                                 {{$post->content}}
                             </td>
                             <td>
-                            <a href="#" class="btn btn-xs btn-info">
-                                    Edit
-                                </a>
+                            <a href="{{route('post.edit',['id' => $post->id])}}" class="btn btn-xs btn-info">
+                                Edit
+                            </a>
                             </td>
                             <td>    
                                 <a href="{{route('post.delete',['id' => $post->id])}}" class="btn btn-xs btn-danger">

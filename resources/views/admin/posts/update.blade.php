@@ -7,15 +7,15 @@
 
     <div class="card">
         <div class="card-header">
-            Create a new post
+            Update {{$post->title}}
         </div>
 
         <div class="card-body">
-        <form action="{{route('post.store')}}" method="post" enctype="multipart/form-data">
+        <form action="{{route('post.update',['id'=>$post->id])}}" method="post" enctype="multipart/form-data">
                 {{csrf_field()}}
                 <div class="form-group">
                     <label for="title">Title</label>
-                    <input type="text" name="title" class="form-control">
+                    <input type="text" name="title" class="form-control" value="{{$post->title}}">
                 </div>
 
                 <div class="form-group">
@@ -33,12 +33,12 @@
 
                 <div class="form-group">
                         <label for="content">Content</label>
-                        <textarea name="content" id="content" rows="10" cols="90"></textarea>
+                        <textarea name="content" id="content" rows="10" cols="90">{{$post->content}}</textarea>
                 </div>
 
                 <div class="form-group">
                     <div class="text-center">
-                        <button class="btn btn-success" type="submit">Create post</button>
+                        <button class="btn btn-success" type="submit">Update post</button>
                     </div>
                 </div>
              </form>
