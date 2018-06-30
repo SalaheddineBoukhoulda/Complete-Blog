@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Category;
 
 use App\Post;
-
+use App\Tag;
 use Session;
 
 class PostsController extends Controller
@@ -35,7 +35,7 @@ class PostsController extends Controller
             Session::flash('info','Make sure you have at least one category for the post');
             return redirect()->back();
         }
-        return view('admin.posts.create')->with('categories',Category::all());
+        return view('admin.posts.create')->with('categories',Category::all())->with('tags',Tag::all());
     }
 
     /**
@@ -50,7 +50,8 @@ class PostsController extends Controller
             'title' => 'required',
             'featured' => 'required|image',
             'content' => 'required',
-            'category_id' => 'required'
+            'category_id' => 'required',
+            'tags'=> 'required'
         ]);
 
         $featured = $request->featured;
@@ -64,6 +65,8 @@ class PostsController extends Controller
             'category_id' => $request->category_id,
             'slug' => str_slug($request->title)
         ]);
+
+        $post->tags()->attach($request->tags);
 
         return redirect()->back();
     }
