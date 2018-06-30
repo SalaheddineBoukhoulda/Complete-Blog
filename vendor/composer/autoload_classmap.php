@@ -29,6 +29,7 @@ return array(
     'App\\Providers\\BroadcastServiceProvider' => $baseDir . '/app/Providers/BroadcastServiceProvider.php',
     'App\\Providers\\EventServiceProvider' => $baseDir . '/app/Providers/EventServiceProvider.php',
     'App\\Providers\\RouteServiceProvider' => $baseDir . '/app/Providers/RouteServiceProvider.php',
+    'App\\Tag' => $baseDir . '/app/Tag.php',
     'App\\User' => $baseDir . '/app/User.php',
     'Brian2694\\Toastr\\Facades\\Toastr' => $vendorDir . '/brian2694/laravel-toastr/src/Facades/Toastr.php',
     'Brian2694\\Toastr\\Toastr' => $vendorDir . '/brian2694/laravel-toastr/src/Toastr.php',
