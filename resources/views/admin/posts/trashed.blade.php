@@ -35,7 +35,7 @@
                                 {{$post->content}}
                             </td>
                             <td>    
-                                <a href="#" class="btn btn-xs btn-success">
+                                <a href="{{route('post.restore',['id' => $post->id])}}" class="btn btn-xs btn-success">
                                     Restore
                                 </a>
                             </td>

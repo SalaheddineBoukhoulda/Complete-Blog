@@ -133,5 +133,13 @@ class PostsController extends Controller
     }
 
 
+    public function restore($id){
+        $post = Post::withTrashed()->where('id',$id)->first();
+        $post->restore();
+        Session::flash('success','Post restored');
+        return redirect()->back();
+    }
+
+
 
 }
