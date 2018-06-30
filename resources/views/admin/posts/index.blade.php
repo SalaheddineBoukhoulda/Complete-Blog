@@ -7,10 +7,10 @@
             <table class="table table-hover">
                 <thead>
                     <th>
-                        Title
+                        Image
                     </th>
                     <th>
-                        Image
+                        Title
                     </th>
                     <th>
                         Content
@@ -26,22 +26,22 @@
                     @foreach($posts as $post)
                         <tr>
                             <td>
-                                {{$post->title}}
+                                <img src="{{$post->featured}}" alt="{{$post->title}}" width="50px" height="50px">
                             </td>
                             <td>
-                            <img src="{{$post->featured}}" alt="{{$post->title}}" width="50px" height="50px">
+                                {{$post->title}}
                             </td>
                             <td>
                                 {{$post->content}}
                             </td>
                             <td>
-                                <a href="#" class="btn btn-xs btn-info">
+                            <a href="#" class="btn btn-xs btn-info">
                                     Edit
                                 </a>
                             </td>
                             <td>    
-                                <a href="#" class="btn btn-xs btn-danger">
-                                    Delete
+                                <a href="{{route('post.delete',['id' => $post->id])}}" class="btn btn-xs btn-danger">
+                                    Trash
                                 </a>
                             </td>
                         </tr>
