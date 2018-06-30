@@ -50,6 +50,11 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'],function(){
         'as' => 'posts.trashed'
     ]);
 
+    Route::get('/post/trunc/{id}',[
+        'uses' => 'PostsController@trunc',
+        'as' => 'post.trunc'
+    ]);
+
 
     Route::get('/category/create',[
         'uses' => 'CategoriesController@create',

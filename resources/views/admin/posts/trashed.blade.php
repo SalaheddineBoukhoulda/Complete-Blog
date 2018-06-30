@@ -40,7 +40,7 @@
                                 </a>
                             </td>
                             <td>    
-                                <a href="#" class="btn btn-xs btn-danger">
+                            <a href="{{route('post.trunc',['id' => $post->id])}}" class="btn btn-xs btn-danger">
                                     Delete
                                 </a>
                             </td>

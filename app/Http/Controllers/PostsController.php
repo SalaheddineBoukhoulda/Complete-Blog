@@ -121,4 +121,17 @@ class PostsController extends Controller
         $posts = Post::onlyTrashed()->get();
         return view('admin.posts.trashed')->with('posts',$posts);
     }
+
+
+    public function trunc($id){
+        $post = Post::withTrashed()->where('id',$id)->first();
+        $post->forceDelete();
+
+        Session::flash('success','Deleted post permanently');
+
+        return redirect()->back();
+    }
+
+
+
 }
