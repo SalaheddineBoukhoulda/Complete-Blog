@@ -29,7 +29,7 @@
                                 {{$post->title}}
                             </td>
                             <td>
-                                Image
+                            <img src="{{$post->featured}}" alt="{{$post->title}}" width="50px" height="50px">
                             </td>
                             <td>
                                 {{$post->content}}

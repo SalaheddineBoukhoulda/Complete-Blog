@@ -11,11 +11,16 @@ class Post extends Model
 
     use SoftDeletes;
 
+    public function getFeaturedAttribute($featured){
+        return asset($featured);
+    }
+
     protected $fillable = [
         'title','content','featured','category_id','slug'
     ];
 
     protected $dates = ['deleted_at'];
+
 
     public function category(){
         return $this->belongsTo('App\Category');
