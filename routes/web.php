@@ -157,6 +157,17 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'],function(){
         'as' => 'user.store'
     ]);
 
+
+    Route::get('/user/notadmin/{id}',[
+        'uses' => 'UsersController@not_admin',
+        'as' =>'user.not.admin'
+    ]);
+
+    Route::get('/user/admin/{id}',[
+        'uses' => 'UsersController@admin',
+        'as' =>'user.admin'
+    ]);
+
     
 });
 

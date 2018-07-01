@@ -10,6 +10,11 @@ use Session;
 
 class UsersController extends Controller
 {
+
+    public function __construct(){
+        $this->middleware('admin');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -100,5 +105,25 @@ class UsersController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+
+    public function admin($id){
+        $user = User::find($id);
+        $user->admin = 1;
+        $user->update();
+
+        Session::flash('success','Upgraded user successfuly');
+        return redirect()->back();
+    }
+
+
+    public function not_admin($id){
+        $user = User::find($id);
+        $user->admin = 0;
+        $user->update();
+
+        Session::flash('success','Downgraded user successfuly');
+        return redirect()->back();
     }
 }
