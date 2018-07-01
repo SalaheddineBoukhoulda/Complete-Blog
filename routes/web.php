@@ -140,6 +140,10 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'],function(){
         'uses' => 'TagController@destroy',
         'as' => 'tag.delete'
     ]);
-
-
 });
+
+
+    /*** TEST ***/
+    Route::get('/test',function(){
+        return App\User::find(1)->profile;
+    });
