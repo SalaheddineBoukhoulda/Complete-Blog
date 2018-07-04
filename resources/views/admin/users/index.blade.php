@@ -16,6 +16,9 @@
                         Name
                     </th>
                     <th>
+                        Edit
+                    </th>
+                    <th>
                         Permissions
                     </th>
                     <th>
@@ -31,6 +34,9 @@
                                 </td>
                                 <td>
                                     {{$user->name}}
+                                </td>
+                                <td>
+                                    <a href="{{route('user.edit',['id'=>$user->id])}}" class="btn btn-xs btn-info">Edit</a>
                                 </td>
                                 <td>
                                     @if($user->admin)

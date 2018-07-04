@@ -168,6 +168,18 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'],function(){
         'as' =>'user.admin'
     ]);
 
+
+    Route::get('/user/edit',[
+        'uses' => 'UsersController@edit',
+        'as' => 'user.edit'
+    ]);
+
+
+    Route::post('/user/update',[
+        'uses' => 'UsersController@update',
+        'as' => 'user.update'
+    ]);
+
     
 });
 

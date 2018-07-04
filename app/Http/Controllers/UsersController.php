@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Profile;
 use Session;
+use Auth;
 
 class UsersController extends Controller
 {
@@ -79,9 +80,9 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit()
     {
-        //
+        return view('admin.users.update')->with('user',Auth::user());;
     }
 
     /**
@@ -91,9 +92,37 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $this->validate($request,[
+            'name' => 'required',
+            'email' => 'required|email',
+            'facebook' => 'required|url',
+            'youtube' => 'required|url'
+        ]);
+
+        $user = Auth::user();
+        if($request->hasFile('avatar')){
+            $avatar = $request->avatar;
+            $avatar_identical_name = time().$avatar->getClientOriginalName();
+            $avatar->move('avatars/',$avatar_identical_name);
+            $user->profile->avatar = 'avatars/' . $avatar_identical_name;
+        }
+
+        if($request->has('password') && $request->password != null){
+            $user->password = bcrypt($request->password);
+        }
+
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->profile->facebook = $request->facebook;
+        $user->profile->youtube = $request->youtube;
+
+        $user->update();
+        $user->profile->update();
+
+        Session::flash('success','Profile updated');
+        return redirect()->back();
     }
 
     /**
