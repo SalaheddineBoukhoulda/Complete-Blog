@@ -51,7 +51,6 @@ class PostsController extends Controller
             'featured' => 'required|image',
             'content' => 'required',
             'category_id' => 'required',
-            'tags'=> 'required'
         ]);
 
         $featured = $request->featured;
@@ -107,7 +106,6 @@ class PostsController extends Controller
             'title' => 'required',
             'content' => 'required',
             'category_id' => 'required',
-            'tags' => 'required'
         ]);
 
         $post = Post::find($id);
