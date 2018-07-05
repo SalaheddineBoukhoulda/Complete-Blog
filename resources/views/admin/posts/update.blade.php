@@ -41,7 +41,7 @@
                                         Checked
                                     @endif
                                 @endforeach
-                                >{{$tag->tag}}</label>
+                                > {{$tag->tag}}</label>
                         </div>
                     @endforeach
                 </div>
