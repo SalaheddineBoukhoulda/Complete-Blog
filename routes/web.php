@@ -16,6 +16,12 @@ Route::get('/',[
     'as' => 'index'
 ]);
 
+
+Route::get('/post/{slug}',[
+    'uses' => 'FrontEndController@single',
+    'as' => 'post.single'
+]);
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -202,5 +208,9 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'],function(){
 
     /*** TEST ***/
     Route::get('/test',function(){
-        return App\User::find(1)->profile;
+        return App\Post::find(1)->profile;
     });
+
+
+
+    

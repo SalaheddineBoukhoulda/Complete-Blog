@@ -22,4 +22,14 @@ class FrontEndController extends Controller
                     ->with('mysql',Category::find(6))
                     ->with('settings',Settings::first());
     }
+
+
+    public function single($slug){
+        $post = Post::where('slug',$slug)->first();
+        return view('single')
+                ->with('post',$post)
+                ->with('title',Settings::first()->site_name)
+                ->with('categories',Category::take(4)->get())
+                ->with('settings',Settings::first());
+    }
 }
