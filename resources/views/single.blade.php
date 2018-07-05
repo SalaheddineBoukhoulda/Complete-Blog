@@ -161,10 +161,8 @@
                             </div>
                         </div>
                     </div>
-    
-                    <div class="row">
-    
-                    </div>
+
+                    @include('disqus')
     
     
                 </div>
@@ -185,8 +183,8 @@
                             </div>
     
                             <div class="tags-wrap text-center">
-                                @foreach($all_categories as $category)
-                                    <a href="#" class="w-tags-item text-center">{{$category->name}}</a>
+                                @foreach($all_tags as $tag)
+                                    <a href="#" class="w-tags-item text-center">{{$tag->tag}}</a>
                                 @endforeach
                             </div>
                         </div>

@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Settings;
 use App\Category;
 use App\Post;
-
+use App\Tag;
 class FrontEndController extends Controller
 {
     public function index(){
@@ -35,6 +35,6 @@ class FrontEndController extends Controller
                 ->with('settings',Settings::first())
                 ->with('next',Post::find($next_id))
                 ->with('prev',Post::find($prev_id))
-                ->with('all_categories',Category::all());
+                ->with('all_tags',Tag::all());
     }
 }
