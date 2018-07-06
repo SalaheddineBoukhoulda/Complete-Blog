@@ -71,21 +71,12 @@
                         </div>
     
                         <div class="socials">Share:
-                            <a href="#" class="social__item">
-                                <i class="seoicon-social-facebook"></i>
-                            </a>
-                            <a href="#" class="social__item">
-                                <i class="seoicon-social-twitter"></i>
-                            </a>
-                            <a href="#" class="social__item">
-                                <i class="seoicon-social-linkedin"></i>
-                            </a>
-                            <a href="#" class="social__item">
-                                <i class="seoicon-social-google-plus"></i>
-                            </a>
-                            <a href="#" class="social__item">
-                                <i class="seoicon-social-pinterest"></i>
-                            </a>
+                                <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+                                        <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+                                        <a class="a2a_button_facebook"></a>
+                                        <a class="a2a_button_twitter"></a>
+                                        <a class="a2a_button_google_plus"></a>
+                                </div>
                         </div>
     
                     </article>

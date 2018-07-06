@@ -147,6 +147,10 @@
 
 <!-- JS Script -->
 
+<!-- AddToAny Script -->
+    <script async src="https://static.addtoany.com/menu/page.js"></script>
+
+
 <script src="{{asset('app/js/jquery-2.1.4.min.js')}}"></script>
 <script src="{{asset('app/js/crum-mega-menu.js')}}"></script>
 <script src="{{asset('app/js/swiper.jquery.min.js')}}"></script>
