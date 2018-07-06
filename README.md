@@ -15,45 +15,45 @@ Note that if you're an admin you've full control of CMS and accessing advanced f
 here are some examples:
 #### Dashboard
 <p align="center" display="inline" >
-  <img  src="images/cms_index.png" width="500" height="250"/>
+  <img  src="images/cms_index.png" width="800" height="400"/>
 </p>
 
 #### Some User/Admin features
 
 <p float="left" align="center">
-    <img  src="images/cms_post_create.png" width="500" height="250"/>
-    <img  src="images/cms_posts.png" width="500" height="250"/>
+    <img  src="images/cms_post_create.png" width="800" height="400"/>
+    <img  src="images/cms_posts.png" width="800" height="400"/>
 </p>
 
 #### Some only Admin features
 <p float="left" align="center">
-    <img  src="images/cms_users.png" width="500" height="250"/>
-    <img  src="images/cms_settings.png" width="500" height="250"/>
+    <img  src="images/cms_users.png" width="800" height="400"/>
+    <img  src="images/cms_settings.png" width="800" height="400"/>
 </p>
 
 ### Exploring the blog
 I'll leave you with this quick tour guide:
 <p align="center" display="inline" >
-  <img  src="images/blog_index.png" width="500" height="250"/>
+  <img  src="images/blog_index.png" width="800" height="400"/>
 </p>
 
 #### Blog single view
 
 <p float="left" align="center">
-    <img  src="images/blog_post.png" width="500" height="250"/>
-    <img  src="images/blog_post_comments.png" width="500" height="250"/>
+    <img  src="images/blog_post.png" width="800" height="400"/>
+    <img  src="images/blog_post_comments.png" width="800" height="400"/>
 </p>
 
 #### Category/Tag view
 
 <p align="center" display="inline" >
-  <img  src="images/blog_category.png" width="500" height="250"/>
+  <img  src="images/blog_category.png" width="800" height="400"/>
 </p>
 
-#### Emailsubscribtion
+#### Email-subscribtion
 
 <p align="center" display="inline" >
-  <img  src="images/blog_subscribe.png" width="500" height="250"/>
+  <img  src="images/blog_subscribe.png" width="800" height="400"/>
 </p>
 
 
