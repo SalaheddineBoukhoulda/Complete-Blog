@@ -22,6 +22,17 @@ Route::get('/post/{slug}',[
     'as' => 'post.single'
 ]);
 
+
+Route::get('/category/{id}',[
+    'uses' => 'FrontEndController@category',
+    'as' => 'category.frontend'
+]);
+
+Route::get('/tag/{id}',[
+    'uses' => 'FrontEndController@tag',
+    'as' => 'tag.frontend'
+]);
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

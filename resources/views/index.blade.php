@@ -68,7 +68,7 @@
                             <div class="post__content-info">
 
                                     <h2 class="post__title entry-title text-center">
-                                        <a href="15_blog_details.html">{{$first_post->title}}</a>
+                                        <a href="{{route('post.single',['slug' => $first_post->slug])}}">{{$first_post->title}}</a>
                                     </h2>
 
                                     <div class="post-additional-info">
@@ -85,7 +85,7 @@
 
                                         <span class="category">
                                             <i class="seoicon-tags"></i>
-                                            <a href="#">{{$first_post->category->name}}</a>
+                                            <a href="{{route('category.frontend',['slug' => $first_post->category->id])}}">{{$first_post->category->name}}</a>
                                         </span>
 
                                         <span class="post__comments">
@@ -112,7 +112,7 @@
                             <a href="{{$second_post->featured}}" class="link-image js-zoom-image">
                                 <i class="seoicon-zoom"></i>
                             </a>
-                            <a href="#" class="link-post">
+                            <a href="{{route('post.single',['slug' => $second_post->slug])}}" class="link-post">
                                 <i class="seoicon-link-bold"></i>
                             </a>
                         </div>
@@ -122,7 +122,7 @@
                             <div class="post__content-info">
 
                                     <h2 class="post__title entry-title ">
-                                        <a href="15_blog_details.html">{{$second_post->title}}</a>
+                                        <a href="{{route('post.single',['slug' => $second_post->slug])}}">{{$second_post->title}}</a>
                                     </h2>
 
                                     <div class="post-additional-info">
@@ -139,7 +139,7 @@
 
                                         <span class="category">
                                             <i class="seoicon-tags"></i>
-                                            <a href="#">{{$second_post->category->name}}</a>
+                                            <a href="{{route('category.frontend',['slug' => $second_post->category->id])}}">{{$second_post->category->name}}</a>
                                         </span>
 
                                         <span class="post__comments">
@@ -162,7 +162,7 @@
                             <a href="{{$third_post->featured}}" class="link-image js-zoom-image">
                                 <i class="seoicon-zoom"></i>
                             </a>
-                            <a href="#" class="link-post">
+                            <a href="{{route('post.single',['slug' => $third_post->slug])}}" class="link-post">
                                 <i class="seoicon-link-bold"></i>
                             </a>
                         </div>
@@ -172,7 +172,7 @@
                             <div class="post__content-info">
 
                                     <h2 class="post__title entry-title ">
-                                        <a href="15_blog_details.html">{{$third_post->title}}</a>
+                                        <a href="{{route('post.single',['slug' => $third_post->slug])}}">{{$third_post->title}}</a>
                                     </h2>
 
                                     <div class="post-additional-info">
@@ -189,7 +189,7 @@
 
                                         <span class="category">
                                             <i class="seoicon-tags"></i>
-                                            <a href="#">{{$third_post->category->name}}</a>
+                                            <a href="{{route('category.frontend',['slug' => $third_post->category->id])}}">{{$third_post->category->name}}</a>
                                         </span>
 
                                         <span class="post__comments">
@@ -231,7 +231,7 @@
                                             <div class="case-item__thumb">
                                             <img src="{{$post->featured}}" alt="{{$post->title}}">
                                             </div>
-                                            <h6 class="case-item__title"><a href="#">{{$post->title}}</a></h6>
+                                            <h6 class="case-item__title"><a href="{{route('post.single',['slug' => $post->slug])}}">{{$post->title}}</a></h6>
                                         </div>
                                     </div>
                                 @endforeach
@@ -260,7 +260,7 @@
                                                 <div class="case-item__thumb">
                                                 <img src="{{$post->featured}}" alt="{{$post->title}}">
                                                 </div>
-                                                <h6 class="case-item__title"><a href="#">{{$post->title}}</a></h6>
+                                                <h6 class="case-item__title"><a href="{{route('post.single',['slug' => $post->slug])}}">{{$post->title}}</a></h6>
                                             </div>
                                         </div>
                                     @endforeach
@@ -289,7 +289,7 @@
                                                     <div class="case-item__thumb">
                                                     <img src="{{$post->featured}}" alt="{{$post->title}}">
                                                     </div>
-                                                    <h6 class="case-item__title"><a href="#">{{$post->title}}</a></h6>
+                                                    <h6 class="case-item__title"><a href="{{route('post.single',['slug' => $post->slug])}}">{{$post->title}}</a></h6>
                                                 </div>
                                             </div>
                                         @endforeach

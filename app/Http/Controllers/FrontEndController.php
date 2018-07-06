@@ -37,4 +37,25 @@ class FrontEndController extends Controller
                 ->with('prev',Post::find($prev_id))
                 ->with('all_tags',Tag::all());
     }
+
+
+    public function category($id){
+        $category = Category::find($id);
+        return view('category')
+                ->with('category',$category)
+                ->with('title',Settings::first()->site_name)
+                ->with('categories',Category::take(4)->get())
+                ->with('settings',Settings::first())
+                ->with('all_tags',Tag::all());
+    }
+
+    public function tag($id){
+        $curr_tag = Tag::find($id);
+        return view('tag')
+                ->with('curr_tag',$curr_tag)
+                ->with('title',Settings::first()->site_name)
+                ->with('categories',Category::take(4)->get())
+                ->with('settings',Settings::first())
+                ->with('all_tags',Tag::all());
+    }
 }
