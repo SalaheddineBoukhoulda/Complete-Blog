@@ -33,6 +33,17 @@ Route::get('/tag/{id}',[
     'as' => 'tag.frontend'
 ]);
 
+
+Route::get('/results',function(){
+    $posts = \App\Post::where('title','like','%'.request('query').'%')->get();
+    return view('results')
+            ->with('posts',$posts)
+            ->with('title','Results for: ' . request('query') )
+            ->with('categories',\App\Category::take(4)->get())
+            ->with('settings',\App\Settings::first())
+            ->with('all_tags',\App\Tag::all());
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
